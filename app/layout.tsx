@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Archivo } from "next/font/google";
 import "./globals.css";
+import { LangProvider } from "@/lib/i18n";
+import Nav from "@/components/Nav";
+import Footer from "@/components/Footer";
 
 const archivo = Archivo({
   variable: "--font-archivo",
@@ -21,7 +24,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="vi" className={archivo.variable}>
-      <body>{children}</body>
+      <body>
+        <LangProvider>
+          <Nav />
+          {children}
+          <Footer />
+        </LangProvider>
+      </body>
     </html>
   );
 }

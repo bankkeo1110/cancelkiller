@@ -3,11 +3,12 @@ export type Bi = { vi: string; en: string };
 
 export const nav = {
   links: [
-    { href: "#phong-ngua", label: { vi: "Phòng ngừa", en: "Prevention" } },
-    { href: "#loai", label: { vi: "Các loại", en: "Cancer types" } },
-    { href: "#dieu-tri", label: { vi: "Điều trị", en: "Treatment" } },
-    { href: "#danh-gia", label: { vi: "Đánh giá", en: "Self-check" } },
-    { href: "#faq", label: { vi: "Hỏi đáp", en: "FAQ" } },
+    { href: "/#phong-ngua", label: { vi: "Phòng ngừa", en: "Prevention" } },
+    { href: "/#loai", label: { vi: "Các loại", en: "Cancer types" } },
+    { href: "/bai-viet", label: { vi: "Bài viết", en: "Articles" } },
+    { href: "/#dieu-tri", label: { vi: "Điều trị", en: "Treatment" } },
+    { href: "/#danh-gia", label: { vi: "Đánh giá", en: "Self-check" } },
+    { href: "/#faq", label: { vi: "Hỏi đáp", en: "FAQ" } },
   ],
   cta: { vi: "Tầm soát ngay", en: "Get screened" },
 };

@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { nav } from "@/lib/content";
 import { useLang } from "@/lib/i18n";
 
@@ -7,11 +8,13 @@ export default function Nav() {
   const { lang, toggle, t } = useLang();
   return (
     <nav className="nav">
-      <span className="nav-brand">Vững Tâm</span>
+      <Link href="/" className="nav-brand" style={{ textDecoration: "none" }}>
+        Vững Tâm
+      </Link>
       {nav.links.map((l) => (
-        <a key={l.href} className="nav-link" href={l.href}>
+        <Link key={l.href} className="nav-link" href={l.href}>
           {t(l.label)}
-        </a>
+        </Link>
       ))}
       <button
         type="button"
@@ -22,13 +25,13 @@ export default function Nav() {
       >
         {lang === "vi" ? "EN" : "VI"}
       </button>
-      <a
-        href="#danh-gia"
+      <Link
+        href="/#danh-gia"
         className="btn btn-primary"
         style={{ padding: "9px 16px", lineHeight: 1.5 }}
       >
         {t(nav.cta)}
-      </a>
+      </Link>
     </nav>
   );
 }
