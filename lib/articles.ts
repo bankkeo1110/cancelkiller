@@ -624,6 +624,493 @@ export const articles: Article[] = [
       { vi: "WHO — Chăm sóc giảm nhẹ", en: "WHO — Palliative care" },
     ],
   },
+
+  {
+    slug: "van-dong-va-can-nang",
+    category: "prevention",
+    title: {
+      vi: "Vận động và cân nặng: đòn bẩy chống 13 loại ung thư",
+      en: "Activity and weight: your lever against 13 cancers",
+    },
+    excerpt: {
+      vi: "Thừa cân làm tăng nguy cơ ít nhất 13 loại ung thư. 150 phút vận động mỗi tuần là mục tiêu dễ nhớ.",
+      en: "Excess weight raises the risk of at least 13 cancers. 150 minutes of activity a week is the number to remember.",
+    },
+    readingMin: 5,
+    cover: "activity-week",
+    updated: "2026-07-11",
+    blocks: [
+      {
+        type: "lead",
+        text: {
+          vi: "Sau thuốc lá, thừa cân và ít vận động là nhóm yếu tố nguy cơ ung thư có thể thay đổi lớn nhất. Bạn không cần thành vận động viên — chỉ cần đều đặn.",
+          en: "After tobacco, excess weight and inactivity are the biggest changeable cancer risk factors. You don’t need to be an athlete — just consistent.",
+        },
+      },
+      {
+        type: "figure",
+        infographic: "activity-week",
+        caption: {
+          vi: "Mục tiêu tối thiểu: 150 phút vận động vừa mỗi tuần, cộng 2 buổi tập cơ.",
+          en: "The minimum target: 150 minutes of moderate activity a week, plus 2 muscle sessions.",
+        },
+        source: { vi: "Phỏng theo WHO", en: "Adapted from WHO" },
+      },
+      {
+        type: "heading",
+        text: { vi: "Vì sao cân nặng quan trọng", en: "Why weight matters" },
+      },
+      {
+        type: "paragraph",
+        text: {
+          vi: "Mô mỡ dư thừa không “nằm im”: nó tạo hormone và tình trạng viêm âm ỉ, thúc đẩy một số tế bào ung thư phát triển. Giảm cân vừa phải cũng đã có lợi.",
+          en: "Excess fat tissue isn’t inert: it produces hormones and low-grade inflammation that can push some cancers to grow. Even modest weight loss helps.",
+        },
+      },
+      {
+        type: "heading",
+        text: { vi: "Cách đưa vận động vào ngày bận rộn", en: "Fitting movement into a busy day" },
+      },
+      {
+        type: "list",
+        items: {
+          vi: [
+            "Chia nhỏ: ba lần 10 phút cũng tính là 30 phút",
+            "Đi bộ nhanh, đạp xe, leo cầu thang thay thang máy",
+            "Đứng dậy, đi lại mỗi 30–60 phút ngồi làm việc",
+            "Chọn hoạt động bạn thấy vui để duy trì lâu dài",
+          ],
+          en: [
+            "Break it up: three 10-minute bouts still count as 30",
+            "Brisk walking, cycling, taking stairs over the lift",
+            "Stand and move every 30–60 minutes of sitting",
+            "Pick something you enjoy so you keep doing it",
+          ],
+        },
+      },
+      {
+        type: "callout",
+        tone: "accent",
+        title: { vi: "Ngồi ít cũng quan trọng", en: "Sitting less matters too" },
+        text: {
+          vi: "Ngồi liên tục nhiều giờ có hại riêng, kể cả khi bạn có tập thể dục. Hãy xen kẽ vận động nhẹ suốt cả ngày, đừng dồn hết vào một buổi.",
+          en: "Long unbroken sitting carries its own risk, even if you exercise. Spread light movement across the day rather than saving it all for one session.",
+        },
+      },
+    ],
+    sources: [
+      { vi: "WHO — Hoạt động thể chất (2022)", en: "WHO — Physical activity (2022)" },
+      { vi: "IARC — Béo phì và ung thư", en: "IARC — Body fatness and cancer" },
+      { vi: "World Cancer Research Fund — Cân nặng & vận động", en: "World Cancer Research Fund — Weight & activity" },
+    ],
+  },
+
+  {
+    slug: "ung-thu-gan-va-viem-gan",
+    category: "screening",
+    title: {
+      vi: "Ung thư gan và viêm gan B/C: mối lo hàng đầu ở Việt Nam",
+      en: "Liver cancer and hepatitis B/C: a top concern in Vietnam",
+    },
+    excerpt: {
+      vi: "Phần lớn ung thư gan ở Việt Nam bắt nguồn từ viêm gan virus — và có thể chặn ở nhiều bước.",
+      en: "Most liver cancer in Vietnam starts with viral hepatitis — and can be stopped at several points.",
+    },
+    readingMin: 6,
+    cover: "liver-chain",
+    updated: "2026-07-11",
+    blocks: [
+      {
+        type: "lead",
+        text: {
+          vi: "Việt Nam nằm trong vùng có tỉ lệ viêm gan B cao, và đây là nguyên nhân hàng đầu của ung thư gan. Tin tốt: có vaccine, có thuốc, và có cách tầm soát.",
+          en: "Vietnam has a high rate of hepatitis B, the leading cause of liver cancer here. The good news: there is a vaccine, there are drugs, and there is screening.",
+        },
+      },
+      {
+        type: "figure",
+        infographic: "liver-chain",
+        caption: {
+          vi: "Ung thư gan thường là điểm cuối của một chuỗi nhiều năm — và mỗi mắt xích đều có thể can thiệp.",
+          en: "Liver cancer is usually the end of a years-long chain — and every link can be broken.",
+        },
+        source: { vi: "Phỏng theo WHO", en: "Adapted from WHO" },
+      },
+      {
+        type: "heading",
+        text: { vi: "Ai nên tầm soát", en: "Who should get screened" },
+      },
+      {
+        type: "list",
+        items: {
+          vi: [
+            "Người nhiễm viêm gan B hoặc C mạn tính",
+            "Người bị xơ gan do bất kỳ nguyên nhân nào",
+            "Người uống nhiều rượu bia lâu năm",
+            "Người có tiền sử gia đình ung thư gan",
+          ],
+          en: [
+            "People with chronic hepatitis B or C",
+            "People with cirrhosis from any cause",
+            "Long-term heavy drinkers",
+            "Those with a family history of liver cancer",
+          ],
+        },
+      },
+      {
+        type: "table",
+        headers: {
+          vi: ["Công cụ", "Là gì", "Tần suất"],
+          en: ["Tool", "What it is", "How often"],
+        },
+        rows: [
+          [
+            { vi: "Siêu âm gan", en: "Liver ultrasound" },
+            { vi: "Hình ảnh không xâm lấn, tìm khối bất thường", en: "Non-invasive imaging for lumps" },
+            { vi: "Mỗi 6 tháng nếu nguy cơ cao", en: "Every 6 months if high-risk" },
+          ],
+          [
+            { vi: "Xét nghiệm AFP", en: "AFP blood test" },
+            { vi: "Dấu ấn trong máu có thể tăng khi có ung thư gan", en: "A blood marker that can rise with liver cancer" },
+            { vi: "Kèm siêu âm, mỗi 6 tháng", en: "With ultrasound, every 6 months" },
+          ],
+          [
+            { vi: "Vaccine viêm gan B", en: "Hepatitis B vaccine" },
+            { vi: "Phòng bệnh từ gốc", en: "Prevents the root cause" },
+            { vi: "Tiêm cho trẻ sơ sinh & người chưa có miễn dịch", en: "Newborns & non-immune adults" },
+          ],
+        ],
+      },
+      {
+        type: "callout",
+        tone: "accent",
+        title: { vi: "Aflatoxin — kẻ giấu mặt", en: "Aflatoxin — the hidden threat" },
+        text: {
+          vi: "Nấm mốc trên lạc, ngô, gạo bảo quản kém sinh ra aflatoxin, chất gây ung thư gan mạnh. Hãy bỏ thực phẩm bị mốc, đừng tiếc rẻ cắt bỏ phần mốc rồi ăn tiếp.",
+          en: "Mould on poorly stored peanuts, corn and rice produces aflatoxin, a potent liver carcinogen. Throw out mouldy food — don’t just cut off the mouldy part and eat the rest.",
+        },
+      },
+    ],
+    sources: [
+      { vi: "WHO — Viêm gan B (2024)", en: "WHO — Hepatitis B (2024)" },
+      { vi: "IARC — Aflatoxin và ung thư gan", en: "IARC — Aflatoxins and liver cancer" },
+      { vi: "Bộ Y tế Việt Nam — Chương trình tiêm chủng mở rộng", en: "Vietnam Ministry of Health — Expanded immunisation" },
+    ],
+  },
+
+  {
+    slug: "hoa-tri-va-tac-dung-phu",
+    category: "treatment",
+    title: {
+      vi: "Hóa trị: chuyện gì xảy ra và cách sống chung với tác dụng phụ",
+      en: "Chemotherapy: what happens and how to cope with side effects",
+    },
+    excerpt: {
+      vi: "Hóa trị đáng sợ hơn trong tưởng tượng. Hiểu cơ chế và cách xử lý giúp bạn chủ động hơn.",
+      en: "Chemo is often scarier in the imagination. Understanding it and its side effects puts you back in control.",
+    },
+    readingMin: 6,
+    cover: "chemo-effects",
+    updated: "2026-07-11",
+    blocks: [
+      {
+        type: "lead",
+        text: {
+          vi: "Hóa trị dùng thuốc để tiêu diệt tế bào phân chia nhanh khắp cơ thể. Vì tế bào lành cũng phân chia nhanh (tóc, niêm mạc, tủy xương), chúng bị ảnh hưởng — đó là gốc của phần lớn tác dụng phụ.",
+          en: "Chemotherapy uses drugs to kill fast-dividing cells throughout the body. Because healthy cells also divide fast (hair, gut lining, bone marrow), they get hit too — which is where most side effects come from.",
+        },
+      },
+      {
+        type: "figure",
+        infographic: "chemo-effects",
+        caption: {
+          vi: "Không phải ai cũng gặp mọi tác dụng phụ, và hầu hết đều có cách giảm nhẹ.",
+          en: "Not everyone gets every side effect, and most can be eased.",
+        },
+      },
+      {
+        type: "heading",
+        text: { vi: "Khi nào cần gọi bác sĩ ngay", en: "When to call your team now" },
+      },
+      {
+        type: "list",
+        items: {
+          vi: [
+            "Sốt từ 38°C trở lên (dấu hiệu nhiễm trùng nguy hiểm khi bạch cầu thấp)",
+            "Chảy máu hoặc bầm tím bất thường",
+            "Nôn hoặc tiêu chảy không kiểm soát, mất nước",
+            "Khó thở, đau ngực, hoặc lú lẫn",
+          ],
+          en: [
+            "Fever of 38°C or higher (dangerous infection sign when white cells are low)",
+            "Unusual bleeding or bruising",
+            "Uncontrolled vomiting or diarrhoea, dehydration",
+            "Shortness of breath, chest pain or confusion",
+          ],
+        },
+      },
+      {
+        type: "heading",
+        text: { vi: "Tự chăm giữa các đợt", en: "Caring for yourself between cycles" },
+      },
+      {
+        type: "list",
+        items: {
+          vi: [
+            "Rửa tay thường xuyên, tránh nơi đông người khi bạch cầu thấp",
+            "Ăn nhiều bữa nhỏ, giàu đạm; uống đủ nước",
+            "Ngủ đủ và vận động nhẹ để giảm mệt mỏi",
+            "Ghi nhật ký triệu chứng để trao đổi với bác sĩ",
+          ],
+          en: [
+            "Wash hands often; avoid crowds when white cells are low",
+            "Eat small, protein-rich meals; drink enough fluid",
+            "Sleep well and move gently to ease fatigue",
+            "Keep a symptom diary to share with your team",
+          ],
+        },
+      },
+      {
+        type: "callout",
+        tone: "neutral",
+        title: { vi: "Tác dụng phụ khác nhau ở mỗi người", en: "Side effects vary a lot" },
+        text: {
+          vi: "Có người vẫn đi làm suốt quá trình hóa trị, có người cần nghỉ nhiều hơn. So sánh với người khác ít có ích — hãy tập trung vào phác đồ và cảm nhận của chính bạn.",
+          en: "Some people keep working through chemo; others need much more rest. Comparing yourself to others rarely helps — focus on your own plan and how you feel.",
+        },
+      },
+    ],
+    sources: [
+      { vi: "American Cancer Society — Hóa trị", en: "American Cancer Society — Chemotherapy" },
+      { vi: "National Cancer Institute — Tác dụng phụ", en: "National Cancer Institute — Side effects" },
+    ],
+  },
+
+  {
+    slug: "mien-dich-va-nham-trung-dich",
+    category: "treatment",
+    title: {
+      vi: "Miễn dịch & nhắm trúng đích: điều trị ung thư hiện đại",
+      en: "Immunotherapy & targeted therapy: modern cancer treatment",
+    },
+    excerpt: {
+      vi: "Không phải mọi ca ung thư đều điều trị giống nhau. Ba cách tấn công khác nhau, và vì sao xét nghiệm gen ngày càng quan trọng.",
+      en: "Not every cancer is treated the same way. Three different attacks — and why gene testing matters more and more.",
+    },
+    readingMin: 6,
+    cover: "therapy-compare",
+    updated: "2026-07-11",
+    blocks: [
+      {
+        type: "lead",
+        text: {
+          vi: "Trong hơn một thập kỷ qua, điều trị ung thư đã bước sang thời “cá thể hóa”: chọn thuốc dựa trên đặc điểm riêng của khối u, không chỉ vị trí của nó.",
+          en: "Over the past decade, cancer treatment has entered a “personalised” era: choosing drugs based on a tumour’s own features, not just where it sits.",
+        },
+      },
+      {
+        type: "figure",
+        infographic: "therapy-compare",
+        caption: {
+          vi: "Ba cách tấn công ung thư — thường được kết hợp với nhau và với phẫu thuật, xạ trị.",
+          en: "Three ways to attack cancer — often combined with each other and with surgery or radiation.",
+        },
+      },
+      {
+        type: "heading",
+        text: { vi: "Nhắm trúng đích", en: "Targeted therapy" },
+      },
+      {
+        type: "paragraph",
+        text: {
+          vi: "Thuốc nhắm đích “khóa” vào một đột biến hoặc protein đặc hiệu mà tế bào ung thư phụ thuộc vào. Vì thế cần xét nghiệm khối u trước để biết thuốc có phù hợp không — không phải ai cũng có “đích” để nhắm.",
+          en: "Targeted drugs lock onto a specific mutation or protein the cancer depends on. That’s why the tumour is tested first to see whether the drug fits — not everyone has a “target” to aim at.",
+        },
+      },
+      {
+        type: "heading",
+        text: { vi: "Miễn dịch", en: "Immunotherapy" },
+      },
+      {
+        type: "paragraph",
+        text: {
+          vi: "Liệu pháp miễn dịch không đánh trực tiếp khối u mà “tháo phanh” cho hệ miễn dịch, giúp nó nhận diện và tiêu diệt tế bào ung thư. Với một số loại ung thư, nó tạo ra đáp ứng kéo dài đáng kể.",
+          en: "Immunotherapy doesn’t attack the tumour directly; it releases the “brakes” on the immune system so it can recognise and destroy cancer cells. For some cancers, it produces remarkably durable responses.",
+        },
+      },
+      {
+        type: "callout",
+        tone: "accent",
+        title: { vi: "Hãy hỏi về xét nghiệm phân tử", en: "Ask about molecular testing" },
+        text: {
+          vi: "Nếu bạn hoặc người thân được chẩn đoán ung thư, hãy hỏi bác sĩ liệu khối u có nên làm xét nghiệm đột biến/dấu ấn sinh học không. Kết quả có thể mở ra những lựa chọn điều trị mà phác đồ chuẩn không có.",
+          en: "If you or a loved one is diagnosed, ask whether the tumour should be tested for mutations or biomarkers. The results can unlock treatment options that standard protocols miss.",
+        },
+      },
+    ],
+    sources: [
+      { vi: "National Cancer Institute — Liệu pháp miễn dịch", en: "National Cancer Institute — Immunotherapy" },
+      { vi: "American Cancer Society — Liệu pháp nhắm trúng đích", en: "American Cancer Society — Targeted therapy" },
+    ],
+  },
+
+  {
+    slug: "dinh-duong-khi-dieu-tri",
+    category: "support",
+    title: {
+      vi: "Ăn uống khi đang điều trị ung thư",
+      en: "Eating well during cancer treatment",
+    },
+    excerpt: {
+      vi: "Khi điều trị làm bạn chán ăn, buồn nôn hay đổi vị giác, ăn đủ trở thành một phần của việc chữa bệnh.",
+      en: "When treatment kills appetite or changes taste, eating enough becomes part of the treatment itself.",
+    },
+    readingMin: 5,
+    cover: "eating-treatment",
+    updated: "2026-07-11",
+    blocks: [
+      {
+        type: "lead",
+        text: {
+          vi: "Giữ đủ năng lượng và đạm giúp cơ thể chịu đựng điều trị tốt hơn, hồi phục nhanh hơn và đỡ nhiễm trùng. Trong giai đoạn này, mục tiêu là “ăn đủ”, chưa phải “ăn hoàn hảo”.",
+          en: "Keeping up energy and protein helps your body tolerate treatment, recover faster and fight infection. During this phase, the goal is “eating enough”, not “eating perfectly”.",
+        },
+      },
+      {
+        type: "figure",
+        infographic: "eating-treatment",
+        caption: {
+          vi: "Bốn nguyên tắc thực tế khi ăn uống trở nên khó khăn.",
+          en: "Four practical rules for when eating gets hard.",
+        },
+        source: { vi: "Phỏng theo ACS", en: "Adapted from ACS" },
+      },
+      {
+        type: "heading",
+        text: { vi: "Mẹo cho từng vấn đề", en: "Tips for each problem" },
+      },
+      {
+        type: "table",
+        headers: {
+          vi: ["Vấn đề", "Thử cách này"],
+          en: ["Problem", "Try this"],
+        },
+        rows: [
+          [
+            { vi: "Chán ăn", en: "No appetite" },
+            { vi: "Ăn theo giờ thay vì chờ đói; món giàu năng lượng, khẩu phần nhỏ", en: "Eat by the clock, not by hunger; small, energy-dense portions" },
+          ],
+          [
+            { vi: "Buồn nôn", en: "Nausea" },
+            { vi: "Đồ nguội, ít mùi; tránh món béo, chiên; uống gừng", en: "Cool, low-smell food; avoid greasy fried dishes; try ginger" },
+          ],
+          [
+            { vi: "Lở miệng, khó nuốt", en: "Mouth sores, trouble swallowing" },
+            { vi: "Món mềm, xay nhuyễn; tránh chua cay, nóng", en: "Soft, blended food; avoid acidic, spicy, hot items" },
+          ],
+          [
+            { vi: "Đổi vị giác", en: "Taste changes" },
+            { vi: "Dùng đồ nhựa thay kim loại; nêm chanh, thảo mộc", en: "Use plastic instead of metal cutlery; add lemon, herbs" },
+          ],
+        ],
+      },
+      {
+        type: "callout",
+        tone: "accent",
+        title: { vi: "Cẩn trọng với thực phẩm chức năng", en: "Be careful with supplements" },
+        text: {
+          vi: "Một số vitamin liều cao và thảo dược có thể can thiệp vào hóa trị hoặc xạ trị. Luôn hỏi bác sĩ trước khi dùng bất kỳ thực phẩm chức năng nào trong thời gian điều trị.",
+          en: "Some high-dose vitamins and herbal products can interfere with chemo or radiation. Always check with your doctor before taking any supplement during treatment.",
+        },
+      },
+    ],
+    sources: [
+      { vi: "American Cancer Society — Dinh dưỡng cho người bệnh ung thư", en: "American Cancer Society — Nutrition for people with cancer" },
+      { vi: "National Cancer Institute — Dinh dưỡng trong điều trị", en: "National Cancer Institute — Nutrition in cancer care" },
+    ],
+  },
+
+  {
+    slug: "cham-soc-giam-nhe",
+    category: "support",
+    title: {
+      vi: "Chăm sóc giảm nhẹ: hiểu đúng để không bỏ lỡ",
+      en: "Palliative care: understood right, not too late",
+    },
+    excerpt: {
+      vi: "Nhiều người nhầm chăm sóc giảm nhẹ là “buông xuôi”. Thực ra nó nên bắt đầu ngay từ khi chẩn đoán.",
+      en: "Many mistake palliative care for “giving up”. In fact it should begin right at diagnosis.",
+    },
+    readingMin: 5,
+    cover: "palliative-scope",
+    updated: "2026-07-11",
+    blocks: [
+      {
+        type: "lead",
+        text: {
+          vi: "Chăm sóc giảm nhẹ tập trung vào chất lượng sống: kiểm soát đau, triệu chứng và nâng đỡ tinh thần — song song với điều trị đặc hiệu, chứ không phải thay thế nó.",
+          en: "Palliative care focuses on quality of life: controlling pain, symptoms and emotional strain — alongside active treatment, not instead of it.",
+        },
+      },
+      {
+        type: "figure",
+        infographic: "palliative-scope",
+        caption: {
+          vi: "Chăm sóc giảm nhẹ đi cùng suốt hành trình, không chỉ ở giai đoạn cuối.",
+          en: "Palliative care runs the whole journey, not only at the end.",
+        },
+        source: { vi: "Phỏng theo WHO", en: "Adapted from WHO" },
+      },
+      {
+        type: "heading",
+        text: { vi: "Chăm sóc giảm nhẹ giúp gì", en: "What palliative care helps with" },
+      },
+      {
+        type: "list",
+        items: {
+          vi: [
+            "Kiểm soát đau và các triệu chứng khó chịu",
+            "Hỗ trợ tâm lý cho người bệnh và gia đình",
+            "Giúp hiểu lựa chọn điều trị và ra quyết định",
+            "Phối hợp chăm sóc giữa các bác sĩ, điều dưỡng",
+          ],
+          en: [
+            "Controlling pain and distressing symptoms",
+            "Emotional support for patient and family",
+            "Help understanding options and making decisions",
+            "Coordinating care across doctors and nurses",
+          ],
+        },
+      },
+      {
+        type: "paragraph",
+        text: {
+          vi: "Nghiên cứu cho thấy người được chăm sóc giảm nhẹ sớm thường ít triệu chứng hơn, tinh thần tốt hơn, và trong một số trường hợp còn sống lâu hơn.",
+          en: "Studies show people who receive palliative care early often have fewer symptoms, better mood, and in some cases even live longer.",
+        },
+      },
+      {
+        type: "callout",
+        tone: "neutral",
+        title: { vi: "Không phải là từ bỏ hy vọng", en: "It is not giving up hope" },
+        text: {
+          vi: "Bạn hoàn toàn có thể vừa điều trị tích cực để khỏi bệnh, vừa nhận chăm sóc giảm nhẹ để sống dễ chịu hơn. Hãy chủ động hỏi bác sĩ về dịch vụ này.",
+          en: "You can absolutely pursue active treatment aiming for a cure and receive palliative care to feel better at the same time. Ask your doctor about it early.",
+        },
+      },
+      {
+        type: "quote",
+        text: {
+          vi: "“Thêm sự sống cho những ngày tháng, không chỉ thêm ngày tháng cho sự sống.”",
+          en: "“Adding life to days, not simply days to life.”",
+        },
+      },
+    ],
+    sources: [
+      { vi: "WHO — Chăm sóc giảm nhẹ (2020)", en: "WHO — Palliative care (2020)" },
+      { vi: "American Cancer Society — Chăm sóc giảm nhẹ", en: "American Cancer Society — Palliative care" },
+    ],
+  },
 ];
 
 export function getArticle(slug: string): Article | undefined {
