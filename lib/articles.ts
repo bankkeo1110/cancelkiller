@@ -10,9 +10,10 @@ export type Block =
   | { type: "table"; headers: BiList; rows: Bi[][] }
   | { type: "callout"; title: Bi; text: Bi; tone?: "accent" | "neutral" }
   | { type: "figure"; infographic: string; caption?: Bi; source?: Bi }
+  | { type: "image"; src: string; alt: Bi; caption?: Bi }
   | { type: "quote"; text: Bi };
 
-export type Category = "prevention" | "screening" | "treatment" | "support";
+export type Category = "types" | "prevention" | "screening" | "treatment" | "support";
 
 export type Article = {
   slug: string;
@@ -27,6 +28,7 @@ export type Article = {
 };
 
 export const categoryMeta: Record<Category, { label: Bi }> = {
+  types: { label: { vi: "Theo loại ung thư", en: "By cancer type" } },
   prevention: { label: { vi: "Phòng ngừa", en: "Prevention" } },
   screening: { label: { vi: "Tầm soát", en: "Screening" } },
   treatment: { label: { vi: "Điều trị", en: "Treatment" } },
@@ -88,6 +90,33 @@ export const articles: Article[] = [
           en: "The “healthy plate” rule: half vegetables and fruit, the rest split between whole grains and lean protein.",
         },
         source: { vi: "Phỏng theo WHO/WCRF", en: "Adapted from WHO/WCRF" },
+      },
+      {
+        type: "image",
+        src: "vegetables-fruit.jpg",
+        alt: { vi: "Quầy rau quả tươi ở chợ", en: "A fresh fruit and vegetable market stall" },
+        caption: {
+          vi: "Ăn đa dạng rau quả nhiều màu là cách đơn giản nhất để nạp chất xơ và chất chống oxy hóa.",
+          en: "Eating a colourful variety of produce is the simplest way to get fibre and antioxidants.",
+        },
+      },
+      {
+        type: "heading",
+        text: { vi: "Chất xơ và hệ vi sinh đường ruột", en: "Fibre and your gut" },
+      },
+      {
+        type: "paragraph",
+        text: {
+          vi: "Chất xơ từ rau, quả, đậu và ngũ cốc nguyên hạt giúp ruột hoạt động đều, nuôi vi khuẩn có lợi và được chứng minh làm giảm nguy cơ ung thư đại–trực tràng. Đây là lý do chất xơ quan trọng hơn bất kỳ “siêu thực phẩm” đắt tiền nào.",
+          en: "Fibre from vegetables, fruit, beans and whole grains keeps the bowel moving, feeds helpful bacteria, and is proven to lower colorectal cancer risk. That’s why fibre matters more than any pricey “superfood”.",
+        },
+      },
+      {
+        type: "list",
+        items: {
+          vi: ["Đặt mục tiêu 25–30g chất xơ mỗi ngày", "Để nguyên vỏ rau củ khi có thể", "Đổi gạo trắng lấy gạo lứt vài bữa trong tuần", "Thêm đậu, đỗ vào món ăn quen thuộc"],
+          en: ["Aim for 25–30g of fibre a day", "Keep the skins on vegetables when you can", "Swap white rice for brown a few meals a week", "Add beans and lentils to familiar dishes"],
+        },
       },
       {
         type: "heading",
@@ -199,6 +228,26 @@ export const articles: Article[] = [
         source: { vi: "Phỏng theo CDC/WHO", en: "Adapted from CDC/WHO" },
       },
       {
+        type: "image",
+        src: "no-smoking.jpg",
+        alt: { vi: "Điếu thuốc đang cháy trong gạt tàn", en: "A lit cigarette in an ashtray" },
+        caption: {
+          vi: "Mỗi điếu thuốc chứa hàng nghìn hóa chất, trong đó có hàng chục chất gây ung thư đã được xác định.",
+          en: "Each cigarette contains thousands of chemicals, including dozens of identified carcinogens.",
+        },
+      },
+      {
+        type: "heading",
+        text: { vi: "Còn thuốc lá điện tử (vape) thì sao?", en: "What about vaping?" },
+      },
+      {
+        type: "paragraph",
+        text: {
+          vi: "Thuốc lá điện tử ít chất độc hơn thuốc lá truyền thống, nhưng “ít hại hơn” không có nghĩa là “an toàn”. Chúng vẫn chứa nicotine gây nghiện và các hóa chất mà tác động lâu dài chưa được biết đầy đủ. Với người chưa hút, tốt nhất là đừng bắt đầu; với người đang cai, vape không phải lựa chọn đầu tay được khuyến nghị.",
+          en: "E-cigarettes contain fewer toxins than tobacco, but “less harmful” doesn’t mean “safe”. They still deliver addictive nicotine and chemicals whose long-term effects aren’t fully known. If you don’t smoke, don’t start; if you’re quitting, vaping isn’t the first-line recommended option.",
+        },
+      },
+      {
         type: "heading",
         text: { vi: "Vì sao khó bỏ", en: "Why it’s hard" },
       },
@@ -280,6 +329,35 @@ export const articles: Article[] = [
           en: "Screening advice changes with age; this is a general guide.",
         },
         source: { vi: "Phỏng theo ACS/WHO", en: "Adapted from ACS/WHO" },
+      },
+      {
+        type: "image",
+        src: "doctor-consult.jpg",
+        alt: { vi: "Bác sĩ khám cho bệnh nhân", en: "A doctor examining a patient" },
+        caption: {
+          vi: "Nếu phát hiện thay đổi ở vú, hãy đi khám sớm — phần lớn khối u ở vú là lành tính, nhưng chỉ bác sĩ mới xác định được.",
+          en: "If you notice a breast change, get it checked early — most breast lumps are benign, but only a doctor can be sure.",
+        },
+      },
+      {
+        type: "heading",
+        text: { vi: "Tự khám vú theo 3 bước", en: "Self-exam in 3 steps" },
+      },
+      {
+        type: "list",
+        ordered: true,
+        items: {
+          vi: [
+            "Nhìn: đứng trước gương, quan sát hình dạng, da và núm vú hai bên",
+            "Sờ khi đứng: dùng đầu ngón tay ấn nhẹ theo vòng tròn khắp bầu vú và nách",
+            "Sờ khi nằm: lặp lại để cảm nhận các lớp sâu hơn của mô vú",
+          ],
+          en: [
+            "Look: in front of a mirror, check the shape, skin and nipples of both breasts",
+            "Feel standing: use fingertip pads to press in small circles over the whole breast and armpit",
+            "Feel lying down: repeat to reach the deeper layers of breast tissue",
+          ],
+        },
       },
       {
         type: "heading",
@@ -381,6 +459,26 @@ export const articles: Article[] = [
           en: "The prevention chain: vaccinate, screen, and treat lesions early before they become cancer.",
         },
         source: { vi: "Phỏng theo WHO", en: "Adapted from WHO" },
+      },
+      {
+        type: "image",
+        src: "vaccination.jpg",
+        alt: { vi: "Nhân viên y tế chuẩn bị mũi tiêm", en: "A health worker preparing an injection" },
+        caption: {
+          vi: "Nhiều nước, trong đó có Việt Nam, đã đưa vaccine HPV vào chương trình tiêm chủng cho trẻ.",
+          en: "Many countries, Vietnam among them, now include the HPV vaccine in childhood immunisation.",
+        },
+      },
+      {
+        type: "heading",
+        text: { vi: "HPV không chỉ gây ung thư cổ tử cung", en: "HPV causes more than cervical cancer" },
+      },
+      {
+        type: "paragraph",
+        text: {
+          vi: "Cùng nhóm virus HPV còn liên quan tới ung thư hậu môn, hầu họng, dương vật và âm hộ — ở cả nam và nữ. Vì thế nhiều nước khuyến nghị tiêm vaccine HPV cho cả bé trai lẫn bé gái.",
+          en: "The same HPV viruses are linked to anal, throat, penile and vulvar cancers — in both men and women. That’s why many countries now recommend the HPV vaccine for boys as well as girls.",
+        },
       },
       {
         type: "heading",
@@ -657,6 +755,26 @@ export const articles: Article[] = [
         source: { vi: "Phỏng theo WHO", en: "Adapted from WHO" },
       },
       {
+        type: "image",
+        src: "jogging.jpg",
+        alt: { vi: "Hai người chạy bộ ngoài trời", en: "Two people jogging outdoors" },
+        caption: {
+          vi: "Vận động không cần phòng gym: đi bộ nhanh hay chạy bộ đều đặn đã đủ đạt mục tiêu.",
+          en: "Activity needs no gym: brisk walking or a regular jog is enough to hit the target.",
+        },
+      },
+      {
+        type: "heading",
+        text: { vi: "Vận động cả trong khi điều trị", en: "Moving even during treatment" },
+      },
+      {
+        type: "paragraph",
+        text: {
+          vi: "Nghiên cứu cho thấy vận động nhẹ nhàng, phù hợp sức khỏe trong và sau điều trị ung thư giúp giảm mệt mỏi, cải thiện tâm trạng và thể lực. Hãy hỏi bác sĩ về mức độ phù hợp — thường là đi bộ, giãn cơ, bài tập nhẹ.",
+          en: "Studies show gentle, appropriate activity during and after cancer treatment reduces fatigue and improves mood and fitness. Ask your doctor what suits you — often walking, stretching and light exercise.",
+        },
+      },
+      {
         type: "heading",
         text: { vi: "Vì sao cân nặng quan trọng", en: "Why weight matters" },
       },
@@ -735,6 +853,26 @@ export const articles: Article[] = [
           en: "Liver cancer is usually the end of a years-long chain — and every link can be broken.",
         },
         source: { vi: "Phỏng theo WHO", en: "Adapted from WHO" },
+      },
+      {
+        type: "image",
+        src: "vaccine-vials.jpg",
+        alt: { vi: "Lọ vaccine trong nhà máy", en: "Vaccine vials in a factory" },
+        caption: {
+          vi: "Việt Nam tiêm vaccine viêm gan B cho trẻ ngay trong 24 giờ đầu sau sinh để phòng lây từ mẹ.",
+          en: "Vietnam gives the hepatitis B vaccine within 24 hours of birth to prevent mother-to-child spread.",
+        },
+      },
+      {
+        type: "heading",
+        text: { vi: "Rượu bia và gan nhiễm mỡ", en: "Alcohol and fatty liver" },
+      },
+      {
+        type: "paragraph",
+        text: {
+          vi: "Ngoài viêm gan virus, hai nguyên nhân đang tăng nhanh là rượu bia và gan nhiễm mỡ (liên quan béo phì, tiểu đường). Cả hai đều có thể dẫn tới xơ gan và ung thư gan — và cả hai đều cải thiện được bằng thay đổi lối sống.",
+          en: "Beyond viral hepatitis, two fast-rising causes are alcohol and fatty liver disease (tied to obesity and diabetes). Both can lead to cirrhosis and liver cancer — and both improve with lifestyle change.",
+        },
       },
       {
         type: "heading",
@@ -826,6 +964,26 @@ export const articles: Article[] = [
         caption: {
           vi: "Không phải ai cũng gặp mọi tác dụng phụ, và hầu hết đều có cách giảm nhẹ.",
           en: "Not everyone gets every side effect, and most can be eased.",
+        },
+      },
+      {
+        type: "image",
+        src: "doctor-consult.jpg",
+        alt: { vi: "Bác sĩ trao đổi với bệnh nhân", en: "A doctor talking with a patient" },
+        caption: {
+          vi: "Hãy hỏi kỹ đội ngũ điều trị về tác dụng phụ có thể gặp và cách phòng trước — bạn có quyền được biết.",
+          en: "Ask your care team about likely side effects and how to prevent them in advance — you have every right to know.",
+        },
+      },
+      {
+        type: "heading",
+        text: { vi: "Bảo tồn khả năng sinh sản", en: "Protecting future fertility" },
+      },
+      {
+        type: "paragraph",
+        text: {
+          vi: "Một số phác đồ hóa trị có thể ảnh hưởng khả năng sinh con sau này. Nếu bạn còn trong độ tuổi sinh sản, hãy hỏi bác sĩ về các lựa chọn (trữ trứng, trữ tinh trùng) TRƯỚC khi bắt đầu điều trị — vì sau đó có thể muộn.",
+          en: "Some chemotherapy regimens can affect future fertility. If you are of reproductive age, ask your doctor about options (egg or sperm banking) BEFORE treatment starts — afterwards may be too late.",
         },
       },
       {
@@ -986,6 +1144,26 @@ export const articles: Article[] = [
         source: { vi: "Phỏng theo ACS", en: "Adapted from ACS" },
       },
       {
+        type: "image",
+        src: "healthy-meal.jpg",
+        alt: { vi: "Đĩa cá, khoai và rau", en: "A plate of fish, potatoes and vegetables" },
+        caption: {
+          vi: "Bữa ăn giàu đạm và năng lượng, dễ nuốt như cá hấp với rau củ mềm rất phù hợp trong thời gian điều trị.",
+          en: "Protein- and energy-rich, easy-to-eat meals like steamed fish with soft vegetables suit treatment well.",
+        },
+      },
+      {
+        type: "heading",
+        text: { vi: "An toàn thực phẩm khi miễn dịch suy giảm", en: "Food safety when immunity is low" },
+      },
+      {
+        type: "paragraph",
+        text: {
+          vi: "Trong một số đợt điều trị, bạch cầu giảm khiến cơ thể dễ nhiễm trùng. Khi đó, an toàn thực phẩm rất quan trọng: ăn chín uống sôi, rửa sạch rau quả, tránh đồ sống (gỏi, trứng lòng đào), và bảo quản thức ăn đúng cách.",
+          en: "During some treatments, low white-cell counts make infections more likely. Food safety then matters: eat food well-cooked, wash produce, avoid raw dishes (sashimi, runny eggs) and store food properly.",
+        },
+      },
+      {
         type: "heading",
         text: { vi: "Mẹo cho từng vấn đề", en: "Tips for each problem" },
       },
@@ -1111,7 +1289,413 @@ export const articles: Article[] = [
       { vi: "American Cancer Society — Chăm sóc giảm nhẹ", en: "American Cancer Society — Palliative care" },
     ],
   },
+
+  {
+    slug: "ung-thu-phoi",
+    category: "types",
+    title: { vi: "Ung thư phổi: toàn cảnh dễ hiểu", en: "Lung cancer: the full picture, made simple" },
+    excerpt: {
+      vi: "Nguyên nhân tử vong do ung thư hàng đầu thế giới — nhưng phần lớn phòng ngừa được, và ngày càng nhiều cách điều trị mới.",
+      en: "The world’s leading cause of cancer death — yet largely preventable, with more new treatments than ever.",
+    },
+    readingMin: 8,
+    cover: "img:chest-xray.jpg",
+    updated: "2026-07-11",
+    blocks: [
+      {
+        type: "lead",
+        text: {
+          vi: "Ung thư phổi thường bị phát hiện muộn vì triệu chứng sớm mờ nhạt. Hiểu nguy cơ và dấu hiệu giúp bạn và người thân chủ động đi khám đúng lúc.",
+          en: "Lung cancer is often found late because early symptoms are vague. Knowing the risks and signs helps you and your family act at the right time.",
+        },
+      },
+      {
+        type: "image",
+        src: "chest-xray.jpg",
+        alt: { vi: "Phim X-quang ngực", en: "A chest X-ray" },
+        caption: {
+          vi: "X-quang ngực là bước hình ảnh đầu tiên; chẩn đoán xác định cần chụp CT và sinh thiết. (Ảnh minh hoạ, không phải ca ung thư.)",
+          en: "A chest X-ray is often the first imaging step; a firm diagnosis needs CT and biopsy. (Illustrative image, not a cancer case.)",
+        },
+      },
+      {
+        type: "heading", text: { vi: "Tổng quan", en: "Overview" } },
+      {
+        type: "paragraph",
+        text: {
+          vi: "Ung thư phổi khởi phát từ tế bào lót đường thở. Có hai nhóm chính: ung thư phổi không tế bào nhỏ (chiếm ~85%, tiến triển chậm hơn) và ung thư phổi tế bào nhỏ (ít gặp hơn, phát triển nhanh). Việc phân loại quyết định hướng điều trị.",
+          en: "Lung cancer starts in the cells lining the airways. There are two main groups: non-small-cell lung cancer (~85%, slower growing) and small-cell lung cancer (less common, fast growing). The type shapes the treatment.",
+        },
+      },
+      {
+        type: "heading", text: { vi: "Dấu hiệu cảnh báo", en: "Warning signs" } },
+      {
+        type: "list",
+        items: {
+          vi: ["Ho kéo dài hơn 2–3 tuần, hoặc ho ra máu", "Khó thở, thở khò khè, đau ngực khi thở sâu", "Khàn tiếng dai dẳng", "Sụt cân, chán ăn, mệt mỏi không rõ lý do", "Viêm phổi tái đi tái lại"],
+          en: ["A cough lasting more than 2–3 weeks, or coughing blood", "Breathlessness, wheezing, chest pain on deep breaths", "A persistent hoarse voice", "Unexplained weight loss, poor appetite, fatigue", "Repeated chest infections"],
+        },
+      },
+      {
+        type: "heading", text: { vi: "Yếu tố nguy cơ", en: "Risk factors" } },
+      {
+        type: "list",
+        items: {
+          vi: ["Hút thuốc lá (kể cả thuốc lào, xì gà) — yếu tố lớn nhất", "Hít khói thuốc thụ động", "Ô nhiễm không khí và khí radon trong nhà", "Phơi nhiễm amiăng, kim loại nặng nghề nghiệp", "Tiền sử gia đình mắc ung thư phổi"],
+          en: ["Smoking (including pipe, cigar) — the biggest factor", "Breathing secondhand smoke", "Air pollution and indoor radon gas", "Occupational asbestos or heavy-metal exposure", "Family history of lung cancer"],
+        },
+      },
+      {
+        type: "callout",
+        tone: "neutral",
+        title: { vi: "Người không hút thuốc vẫn có thể mắc", en: "Non-smokers can get it too" },
+        text: {
+          vi: "Khoảng 10–20% ca ung thư phổi xảy ra ở người chưa từng hút thuốc, liên quan tới ô nhiễm, radon, khói bếp và yếu tố di truyền. Đừng loại trừ chẩn đoán chỉ vì bạn không hút thuốc.",
+          en: "About 10–20% of lung cancers occur in people who never smoked, linked to pollution, radon, cooking smoke and genetics. Don’t rule it out just because you don’t smoke.",
+        },
+      },
+      {
+        type: "heading", text: { vi: "Chẩn đoán & tầm soát", en: "Diagnosis & screening" } },
+      {
+        type: "paragraph",
+        text: {
+          vi: "Chẩn đoán thường qua chụp CT ngực, sau đó sinh thiết để xác định loại tế bào và xét nghiệm đột biến gen. Với người hút thuốc nhiều từ 50 tuổi, chụp CT liều thấp hằng năm giúp phát hiện sớm và giảm tử vong.",
+          en: "Diagnosis usually involves a chest CT, then a biopsy to confirm the cell type and test for gene mutations. For heavy smokers aged 50+, a yearly low-dose CT scan finds cancer early and lowers deaths.",
+        },
+      },
+      {
+        type: "heading", text: { vi: "Điều trị", en: "Treatment" } },
+      {
+        type: "list",
+        items: {
+          vi: ["Phẫu thuật cắt bỏ khi khối u còn khu trú", "Xạ trị, thường kết hợp hóa trị", "Nhắm trúng đích nếu khối u có đột biến phù hợp (EGFR, ALK…)", "Liệu pháp miễn dịch, ngày càng quan trọng"],
+          en: ["Surgery to remove a localised tumour", "Radiation, often with chemotherapy", "Targeted therapy if the tumour has a matching mutation (EGFR, ALK…)", "Immunotherapy, increasingly important"],
+        },
+      },
+      {
+        type: "figure",
+        infographic: "staging-bars",
+        caption: { vi: "Như hầu hết ung thư, phát hiện càng sớm thì cơ hội điều trị hiệu quả càng cao.", en: "As with most cancers, earlier detection means far better odds." },
+      },
+      {
+        type: "heading", text: { vi: "Phòng ngừa", en: "Prevention" } },
+      {
+        type: "list",
+        items: {
+          vi: ["Không hút thuốc và tránh khói thuốc thụ động", "Kiểm tra và giảm radon trong nhà nếu ở vùng nguy cơ", "Đeo bảo hộ khi làm việc với bụi, hóa chất", "Giữ không khí trong nhà thông thoáng, giảm khói bếp"],
+          en: ["Don’t smoke and avoid secondhand smoke", "Test and reduce home radon in risk areas", "Wear protection around dust and chemicals at work", "Keep indoor air ventilated, reduce cooking smoke"],
+        },
+      },
+    ],
+    sources: [
+      { vi: "WHO — Ung thư phổi", en: "WHO — Lung cancer" },
+      { vi: "American Cancer Society — Lung Cancer", en: "American Cancer Society — Lung Cancer" },
+      { vi: "IARC — Tobacco and cancer", en: "IARC — Tobacco and cancer" },
+    ],
+  },
+
+  {
+    slug: "ung-thu-vu",
+    category: "types",
+    title: { vi: "Ung thư vú: nhận biết và điều trị", en: "Breast cancer: recognise it and treat it" },
+    excerpt: {
+      vi: "Ung thư phổ biến nhất ở phụ nữ, nhưng cũng là một trong những loại chữa khỏi cao nhất khi phát hiện sớm.",
+      en: "The most common cancer in women, and one of the most curable when caught early.",
+    },
+    readingMin: 8,
+    cover: "breast-timeline",
+    updated: "2026-07-11",
+    blocks: [
+      { type: "lead", text: {
+        vi: "Phát hiện sớm là chìa khóa: ở giai đoạn đầu, tỉ lệ sống 5 năm của ung thư vú vượt 90%. Biết cách tự nhận biết và đi tầm soát đúng lịch tạo nên khác biệt lớn.",
+        en: "Early detection is everything: at an early stage, 5-year survival for breast cancer exceeds 90%. Knowing how to self-monitor and screen on time makes a big difference.",
+      } },
+      { type: "figure", infographic: "breast-timeline", caption: {
+        vi: "Việc cần làm thay đổi theo tuổi — từ tự nhận biết đến chụp nhũ ảnh định kỳ.",
+        en: "What to do changes with age — from self-awareness to regular mammograms.",
+      } },
+      { type: "heading", text: { vi: "Tổng quan", en: "Overview" } },
+      { type: "paragraph", text: {
+        vi: "Ung thư vú bắt đầu từ tế bào ống dẫn sữa hoặc tiểu thùy. Nó có nhiều thể khác nhau; xét nghiệm thụ thể hormone (ER/PR) và HER2 giúp bác sĩ chọn thuốc phù hợp. Nam giới cũng có thể mắc, dù hiếm.",
+        en: "Breast cancer begins in the milk ducts or lobules. It comes in several subtypes; testing hormone receptors (ER/PR) and HER2 helps doctors pick the right drugs. Men can get it too, though rarely.",
+      } },
+      { type: "heading", text: { vi: "Dấu hiệu cảnh báo", en: "Warning signs" } },
+      { type: "list", items: {
+        vi: ["Khối u hoặc chỗ dày lên ở vú hay nách", "Thay đổi kích thước, hình dạng vú", "Da vú lõm, đỏ, sần như vỏ cam", "Núm vú tụt vào hoặc tiết dịch bất thường (nhất là lẫn máu)", "Đau hoặc thay đổi kéo dài ở một bên vú"],
+        en: ["A lump or thickening in the breast or armpit", "A change in breast size or shape", "Skin dimpling, redness or orange-peel texture", "A newly inverted nipple or unusual discharge (especially bloody)", "Lasting pain or change in one breast"],
+      } },
+      { type: "image", src: "doctor-consult.jpg", alt: { vi: "Bác sĩ khám cho bệnh nhân", en: "A doctor examining a patient" }, caption: {
+        vi: "Bất kỳ thay đổi mới nào ở vú kéo dài đều nên được bác sĩ thăm khám sớm.",
+        en: "Any new, lasting change in the breast deserves a prompt check by a doctor.",
+      } },
+      { type: "heading", text: { vi: "Yếu tố nguy cơ", en: "Risk factors" } },
+      { type: "list", items: {
+        vi: ["Tuổi cao và giới nữ", "Tiền sử gia đình, đột biến gen BRCA1/2", "Có kinh sớm, mãn kinh muộn, sinh con muộn hoặc không sinh", "Thừa cân sau mãn kinh, ít vận động, uống rượu bia", "Dùng hormone thay thế kéo dài"],
+        en: ["Older age and being female", "Family history, BRCA1/2 mutations", "Early periods, late menopause, late or no pregnancy", "Post-menopausal excess weight, inactivity, alcohol", "Long-term hormone replacement therapy"],
+      } },
+      { type: "heading", text: { vi: "Chẩn đoán & tầm soát", en: "Diagnosis & screening" } },
+      { type: "paragraph", text: {
+        vi: "Chụp nhũ ảnh phát hiện khối u trước khi sờ thấy; siêu âm và MRI bổ sung khi mô vú dày hoặc nguy cơ cao. Chẩn đoán xác định bằng sinh thiết. Phụ nữ 40–74 tuổi nên chụp nhũ ảnh mỗi 1–2 năm.",
+        en: "Mammograms find tumours before they can be felt; ultrasound and MRI add value for dense tissue or high risk. Biopsy confirms the diagnosis. Women 40–74 should have a mammogram every 1–2 years.",
+      } },
+      { type: "heading", text: { vi: "Điều trị", en: "Treatment" } },
+      { type: "list", items: {
+        vi: ["Phẫu thuật bảo tồn vú hoặc cắt toàn bộ tuyến vú", "Xạ trị sau phẫu thuật bảo tồn", "Hóa trị tùy giai đoạn và thể bệnh", "Liệu pháp nội tiết cho khối u nhạy hormone", "Thuốc nhắm đích HER2 khi phù hợp"],
+        en: ["Breast-conserving surgery or full mastectomy", "Radiation after conserving surgery", "Chemotherapy depending on stage and subtype", "Hormone therapy for hormone-sensitive tumours", "HER2-targeted drugs when appropriate"],
+      } },
+      { type: "callout", tone: "accent", title: { vi: "Tự khám vú hằng tháng", en: "Monthly self-exam" }, text: {
+        vi: "Mỗi tháng, sau kỳ kinh, hãy nhìn và sờ hai bên vú để quen với trạng thái bình thường của mình. Mục tiêu không phải tự chẩn đoán, mà là phát hiện sớm điều bất thường để đi khám.",
+        en: "Once a month, after your period, look at and feel both breasts to learn what is normal for you. The goal isn’t to self-diagnose but to notice changes early and get them checked.",
+      } },
+    ],
+    sources: [
+      { vi: "WHO — Global Breast Cancer Initiative", en: "WHO — Global Breast Cancer Initiative" },
+      { vi: "American Cancer Society — Breast Cancer", en: "American Cancer Society — Breast Cancer" },
+    ],
+  },
+
+  {
+    slug: "ung-thu-gan",
+    category: "types",
+    title: { vi: "Ung thư gan: phổ biến ở Việt Nam, phòng được nhiều", en: "Liver cancer: common in Vietnam, largely preventable" },
+    excerpt: {
+      vi: "Gắn chặt với viêm gan B/C. Tiêm vaccine, điều trị viêm gan và tầm soát định kỳ có thể thay đổi cục diện.",
+      en: "Tightly tied to hepatitis B/C. Vaccination, treating hepatitis and regular screening can change the outcome.",
+    },
+    readingMin: 8,
+    cover: "liver-chain",
+    updated: "2026-07-11",
+    blocks: [
+      { type: "lead", text: {
+        vi: "Ở Việt Nam, ung thư gan nằm trong nhóm ung thư thường gặp và gây tử vong nhiều nhất — phần lớn do viêm gan virus mạn tính. Đây cũng là loại có nhiều điểm can thiệp để phòng ngừa.",
+        en: "In Vietnam, liver cancer is among the most common and deadly — mostly driven by chronic viral hepatitis. It is also one of the most preventable at multiple points.",
+      } },
+      { type: "figure", infographic: "liver-chain", caption: {
+        vi: "Ung thư gan thường là điểm cuối của chuỗi nhiều năm; mỗi mắt xích đều can thiệp được.",
+        en: "Liver cancer is usually the end of a years-long chain; every link can be broken.",
+      } },
+      { type: "heading", text: { vi: "Tổng quan", en: "Overview" } },
+      { type: "paragraph", text: {
+        vi: "Loại phổ biến nhất là ung thư biểu mô tế bào gan (HCC), thường phát triển trên nền gan đã bị tổn thương do viêm gan mạn hoặc xơ gan. Vì gan có khả năng bù trừ lớn, triệu chứng thường xuất hiện muộn.",
+        en: "The most common type is hepatocellular carcinoma (HCC), which usually develops on a liver already damaged by chronic hepatitis or cirrhosis. Because the liver compensates so well, symptoms often appear late.",
+      } },
+      { type: "heading", text: { vi: "Dấu hiệu cảnh báo", en: "Warning signs" } },
+      { type: "list", items: {
+        vi: ["Đau hoặc tức vùng hạ sườn phải", "Vàng da, vàng mắt", "Chán ăn, sụt cân, buồn nôn", "Bụng trướng, chân phù", "Mệt mỏi kéo dài"],
+        en: ["Pain or discomfort in the upper-right abdomen", "Yellowing of the skin and eyes", "Loss of appetite, weight loss, nausea", "Abdominal swelling, leg oedema", "Persistent fatigue"],
+      } },
+      { type: "image", src: "vaccine-vials.jpg", alt: { vi: "Lọ vaccine", en: "Vaccine vials" }, caption: {
+        vi: "Vaccine viêm gan B — tiêm cho trẻ sơ sinh — là một trong những cách phòng ung thư gan hiệu quả nhất.",
+        en: "The hepatitis B vaccine — given at birth — is one of the most effective ways to prevent liver cancer.",
+      } },
+      { type: "heading", text: { vi: "Yếu tố nguy cơ", en: "Risk factors" } },
+      { type: "list", items: {
+        vi: ["Viêm gan B hoặc C mạn tính", "Xơ gan do bất kỳ nguyên nhân nào", "Uống nhiều rượu bia lâu năm", "Gan nhiễm mỡ, tiểu đường, béo phì", "Aflatoxin trong thực phẩm mốc"],
+        en: ["Chronic hepatitis B or C", "Cirrhosis from any cause", "Long-term heavy alcohol use", "Fatty liver, diabetes, obesity", "Aflatoxin in mouldy food"],
+      } },
+      { type: "heading", text: { vi: "Chẩn đoán & tầm soát", en: "Diagnosis & screening" } },
+      { type: "paragraph", text: {
+        vi: "Người nguy cơ cao nên siêu âm gan kèm xét nghiệm AFP mỗi 6 tháng. Khi nghi ngờ, bác sĩ dùng CT hoặc MRI; ung thư gan là một trong ít loại đôi khi chẩn đoán được bằng hình ảnh mà chưa cần sinh thiết.",
+        en: "High-risk people should have a liver ultrasound with an AFP blood test every 6 months. If cancer is suspected, doctors use CT or MRI; liver cancer is one of the few sometimes diagnosed by imaging without a biopsy.",
+      } },
+      { type: "heading", text: { vi: "Điều trị", en: "Treatment" } },
+      { type: "list", items: {
+        vi: ["Phẫu thuật cắt gan hoặc ghép gan khi đủ điều kiện", "Đốt sóng cao tần, nút mạch hóa chất (TACE)", "Thuốc nhắm đích và liệu pháp miễn dịch cho giai đoạn muộn", "Điều trị song song bệnh gan nền"],
+        en: ["Liver resection or transplant when eligible", "Radiofrequency ablation, chemoembolisation (TACE)", "Targeted drugs and immunotherapy for advanced stages", "Treating the underlying liver disease in parallel"],
+      } },
+      { type: "callout", tone: "accent", title: { vi: "Biết tình trạng viêm gan của mình", en: "Know your hepatitis status" }, text: {
+        vi: "Nhiều người mang viêm gan B mạn mà không biết. Một xét nghiệm máu đơn giản cho biết bạn có nhiễm, có miễn dịch, hay cần tiêm vaccine — bước đầu tiên để chặn ung thư gan.",
+        en: "Many people carry chronic hepatitis B without knowing. A simple blood test tells you whether you’re infected, immune, or need the vaccine — the first step to preventing liver cancer.",
+      } },
+    ],
+    sources: [
+      { vi: "WHO — Viêm gan B", en: "WHO — Hepatitis B" },
+      { vi: "American Cancer Society — Liver Cancer", en: "American Cancer Society — Liver Cancer" },
+    ],
+  },
+
+  {
+    slug: "ung-thu-dai-truc-trang",
+    category: "types",
+    title: { vi: "Ung thư đại–trực tràng: dễ tầm soát nhất", en: "Colorectal cancer: the most screen-preventable" },
+    excerpt: {
+      vi: "Bắt đầu từ polyp lành có thể cắt bỏ trước khi hóa ung thư. Tầm soát đúng lúc gần như phòng được bệnh.",
+      en: "It starts from benign polyps that can be removed before turning cancerous. Timely screening nearly prevents the disease.",
+    },
+    readingMin: 8,
+    cover: "staging-bars",
+    updated: "2026-07-11",
+    blocks: [
+      { type: "lead", text: {
+        vi: "Đây là loại ung thư đặc biệt: nó thường phát triển chậm qua nhiều năm từ một polyp nhỏ. Nếu tìm và cắt polyp kịp thời, bạn có thể chặn ung thư trước khi nó hình thành.",
+        en: "This cancer is special: it usually grows slowly over years from a small polyp. Find and remove the polyp in time, and you can stop the cancer before it forms.",
+      } },
+      { type: "figure", infographic: "staging-bars", caption: {
+        vi: "Phát hiện sớm khi còn khu trú cho cơ hội chữa khỏi rất cao.",
+        en: "Caught early while localised, the chance of cure is very high.",
+      } },
+      { type: "heading", text: { vi: "Tổng quan", en: "Overview" } },
+      { type: "paragraph", text: {
+        vi: "Ung thư đại–trực tràng khởi phát ở ruột già hoặc trực tràng, phần lớn từ polyp tuyến. Quá trình từ polyp đến ung thư thường kéo dài 10 năm trở lên — chính khoảng thời gian này tạo cơ hội cho tầm soát.",
+        en: "Colorectal cancer starts in the large bowel or rectum, mostly from adenomatous polyps. The journey from polyp to cancer often takes 10 years or more — and that window is exactly what screening exploits.",
+      } },
+      { type: "heading", text: { vi: "Dấu hiệu cảnh báo", en: "Warning signs" } },
+      { type: "list", items: {
+        vi: ["Thay đổi thói quen đại tiện kéo dài (tiêu chảy, táo bón, phân dẹt)", "Máu trong phân hoặc chảy máu trực tràng", "Đau bụng, đầy hơi dai dẳng", "Cảm giác đi ngoài không hết", "Sụt cân, thiếu máu không rõ lý do"],
+        en: ["A lasting change in bowel habits (diarrhoea, constipation, narrow stools)", "Blood in the stool or rectal bleeding", "Persistent abdominal pain or bloating", "A feeling the bowel doesn’t fully empty", "Unexplained weight loss or anaemia"],
+      } },
+      { type: "heading", text: { vi: "Yếu tố nguy cơ", en: "Risk factors" } },
+      { type: "list", items: {
+        vi: ["Tuổi trên 45", "Chế độ ăn nhiều thịt đỏ và thịt chế biến sẵn, ít chất xơ", "Ít vận động, béo phì, hút thuốc, uống rượu", "Tiền sử gia đình hoặc bệnh viêm ruột mạn", "Một số hội chứng di truyền (Lynch, FAP)"],
+        en: ["Age over 45", "Diet high in red/processed meat, low in fibre", "Inactivity, obesity, smoking, alcohol", "Family history or chronic inflammatory bowel disease", "Certain inherited syndromes (Lynch, FAP)"],
+      } },
+      { type: "heading", text: { vi: "Chẩn đoán & tầm soát", en: "Diagnosis & screening" } },
+      {
+        type: "table",
+        headers: { vi: ["Phương pháp", "Cách làm", "Tần suất"], en: ["Method", "How", "Interval"] },
+        rows: [
+          [ { vi: "Xét nghiệm máu ẩn trong phân (FIT)", en: "Stool test (FIT)" }, { vi: "Lấy mẫu phân tại nhà", en: "At-home stool sample" }, { vi: "Hằng năm", en: "Yearly" } ],
+          [ { vi: "Nội soi đại tràng", en: "Colonoscopy" }, { vi: "Soi và cắt polyp cùng lúc", en: "Views and removes polyps" }, { vi: "Mỗi 10 năm (nếu bình thường)", en: "Every 10 years if normal" } ],
+        ],
+      },
+      { type: "heading", text: { vi: "Điều trị", en: "Treatment" } },
+      { type: "list", items: {
+        vi: ["Cắt polyp qua nội soi ở giai đoạn rất sớm", "Phẫu thuật cắt đoạn ruột mang khối u", "Hóa trị sau mổ tùy giai đoạn", "Xạ trị (chủ yếu với ung thư trực tràng)", "Nhắm đích/miễn dịch cho giai đoạn muộn"],
+        en: ["Endoscopic polyp removal at the earliest stage", "Surgery to remove the affected bowel segment", "Post-op chemotherapy depending on stage", "Radiation (mainly for rectal cancer)", "Targeted/immunotherapy for advanced disease"],
+      } },
+      { type: "callout", tone: "accent", title: { vi: "Đừng ngại nội soi", en: "Don’t fear the colonoscopy" }, text: {
+        vi: "Nội soi đại tràng vừa phát hiện vừa cắt bỏ polyp ngay trong một lần — thực sự phòng được ung thư, không chỉ tìm ra nó. Từ 45 tuổi, hãy hỏi bác sĩ về lịch tầm soát phù hợp.",
+        en: "A colonoscopy both finds and removes polyps in one go — it truly prevents cancer, not just detects it. From age 45, ask your doctor about the right screening plan.",
+      } },
+    ],
+    sources: [
+      { vi: "American Cancer Society — Colorectal Cancer", en: "American Cancer Society — Colorectal Cancer" },
+      { vi: "WHO — Cancer screening", en: "WHO — Cancer screening" },
+    ],
+  },
+
+  {
+    slug: "ung-thu-da-day",
+    category: "types",
+    title: { vi: "Ung thư dạ dày: vai trò của vi khuẩn H. pylori", en: "Stomach cancer: the role of H. pylori" },
+    excerpt: {
+      vi: "Thường gặp ở châu Á. Một loại vi khuẩn có thể điều trị và thói quen ăn uống là những mảnh ghép quan trọng.",
+      en: "Common in Asia. A treatable bacterium and eating habits are key pieces of the puzzle.",
+    },
+    readingMin: 7,
+    cover: "staging-bars",
+    updated: "2026-07-11",
+    blocks: [
+      { type: "lead", text: {
+        vi: "Ung thư dạ dày thường tiến triển âm thầm và dễ nhầm với đau dạ dày thông thường. Điều đáng chú ý: một yếu tố nguy cơ hàng đầu — vi khuẩn H. pylori — có thể phát hiện và điều trị được.",
+        en: "Stomach cancer often progresses quietly and is easily mistaken for ordinary indigestion. Notably, a leading risk factor — the H. pylori bacterium — can be detected and treated.",
+      } },
+      { type: "heading", text: { vi: "Tổng quan", en: "Overview" } },
+      { type: "paragraph", text: {
+        vi: "Phần lớn ung thư dạ dày là ung thư biểu mô tuyến, phát triển từ lớp niêm mạc. Viêm dạ dày mạn do H. pylori có thể dẫn tới thay đổi tiền ung thư qua nhiều năm, nên việc phát hiện sớm rất quan trọng.",
+        en: "Most stomach cancers are adenocarcinomas that develop from the mucosal lining. Chronic gastritis from H. pylori can lead to pre-cancerous changes over years, so early detection matters.",
+      } },
+      { type: "heading", text: { vi: "Dấu hiệu cảnh báo", en: "Warning signs" } },
+      { type: "list", items: {
+        vi: ["Đau hoặc đầy tức vùng thượng vị kéo dài", "Khó tiêu, ợ nóng dai dẳng, nhanh no", "Buồn nôn, nôn (có thể ra máu)", "Sụt cân, chán ăn, mệt mỏi", "Phân đen do chảy máu"],
+        en: ["Lasting pain or fullness in the upper abdomen", "Persistent indigestion, heartburn, feeling full quickly", "Nausea or vomiting (sometimes with blood)", "Weight loss, poor appetite, fatigue", "Black stools from bleeding"],
+      } },
+      { type: "heading", text: { vi: "Yếu tố nguy cơ", en: "Risk factors" } },
+      { type: "list", items: {
+        vi: ["Nhiễm H. pylori mạn tính", "Ăn nhiều đồ muối, dưa muối, thực phẩm hun khói", "Ít rau quả tươi", "Hút thuốc lá", "Tiền sử gia đình, viêm teo niêm mạc dạ dày"],
+        en: ["Chronic H. pylori infection", "Diet high in salty, pickled, smoked foods", "Few fresh fruits and vegetables", "Smoking", "Family history, atrophic gastritis"],
+      } },
+      { type: "callout", tone: "accent", title: { vi: "H. pylori có thể diệt được", en: "H. pylori can be cleared" }, text: {
+        vi: "Nếu bạn đau dạ dày dai dẳng, hãy hỏi bác sĩ về xét nghiệm H. pylori. Một đợt kháng sinh ngắn có thể loại bỏ vi khuẩn và giảm nguy cơ ung thư dạ dày về sau.",
+        en: "If you have persistent stomach trouble, ask your doctor about an H. pylori test. A short course of antibiotics can clear the bacterium and lower future stomach-cancer risk.",
+      } },
+      { type: "heading", text: { vi: "Chẩn đoán & điều trị", en: "Diagnosis & treatment" } },
+      { type: "paragraph", text: {
+        vi: "Nội soi dạ dày kèm sinh thiết là phương pháp chẩn đoán chính. Điều trị gồm phẫu thuật cắt dạ dày (một phần hoặc toàn bộ), hóa trị trước/sau mổ, và với một số trường hợp là thuốc nhắm đích HER2 hoặc miễn dịch.",
+        en: "Endoscopy with biopsy is the main diagnostic tool. Treatment includes surgery to remove part or all of the stomach, chemotherapy before/after surgery, and for some cases HER2-targeted or immunotherapy drugs.",
+      } },
+      { type: "heading", text: { vi: "Phòng ngừa", en: "Prevention" } },
+      { type: "list", items: {
+        vi: ["Điều trị H. pylori khi được chỉ định", "Giảm muối, đồ muối chua, thực phẩm hun khói", "Ăn nhiều rau quả tươi", "Không hút thuốc", "Nội soi khi có triệu chứng dai dẳng hoặc nguy cơ cao"],
+        en: ["Treat H. pylori when advised", "Cut salt, pickled and smoked foods", "Eat plenty of fresh vegetables and fruit", "Don’t smoke", "Get an endoscopy for persistent symptoms or high risk"],
+      } },
+    ],
+    sources: [
+      { vi: "IARC — Helicobacter pylori", en: "IARC — Helicobacter pylori" },
+      { vi: "American Cancer Society — Stomach Cancer", en: "American Cancer Society — Stomach Cancer" },
+    ],
+  },
+
+  {
+    slug: "ung-thu-co-tu-cung",
+    category: "types",
+    title: { vi: "Ung thư cổ tử cung: loại có thể xóa sổ", en: "Cervical cancer: a cancer we can eliminate" },
+    excerpt: {
+      vi: "Gần như luôn do virus HPV. Với vaccine và tầm soát, đây là loại ung thư đầu tiên thế giới đặt mục tiêu loại trừ.",
+      en: "Almost always caused by HPV. With the vaccine and screening, it’s the first cancer the world aims to eliminate.",
+    },
+    readingMin: 7,
+    cover: "hpv-funnel",
+    updated: "2026-07-11",
+    blocks: [
+      { type: "lead", text: {
+        vi: "Ung thư cổ tử cung khác biệt vì ta biết rõ nguyên nhân (virus HPV) và có công cụ chặn ở mọi bước: vaccine, tầm soát, và điều trị tổn thương tiền ung thư.",
+        en: "Cervical cancer is unusual because we know its cause (HPV) and have tools to stop it at every step: vaccine, screening, and treating pre-cancer.",
+      } },
+      { type: "figure", infographic: "hpv-funnel", caption: {
+        vi: "Bốn bước phòng ngừa — mỗi bước đều cắt giảm nguy cơ.",
+        en: "Four prevention steps — each one cuts the risk.",
+      } },
+      { type: "heading", text: { vi: "Tổng quan", en: "Overview" } },
+      { type: "paragraph", text: {
+        vi: "Hầu hết ca ung thư cổ tử cung do nhiễm dai dẳng các chủng HPV nguy cơ cao. Từ khi nhiễm đến khi thành ung thư thường mất 10–20 năm, tạo cơ hội lớn để phát hiện và xử lý tổn thương sớm.",
+        en: "Most cervical cancers come from persistent infection with high-risk HPV strains. It usually takes 10–20 years from infection to cancer, giving a large window to find and treat lesions early.",
+      } },
+      { type: "heading", text: { vi: "Dấu hiệu cảnh báo", en: "Warning signs" } },
+      { type: "list", items: {
+        vi: ["Chảy máu âm đạo bất thường (giữa kỳ kinh, sau quan hệ, sau mãn kinh)", "Tiết dịch âm đạo có mùi hoặc lẫn máu", "Đau khi quan hệ", "Đau vùng chậu kéo dài"],
+        en: ["Unusual vaginal bleeding (between periods, after sex, after menopause)", "Foul-smelling or bloody vaginal discharge", "Pain during intercourse", "Persistent pelvic pain"],
+      } },
+      { type: "image", src: "vaccination.jpg", alt: { vi: "Tiêm vaccine", en: "A vaccination" }, caption: {
+        vi: "Vaccine HPV hiệu quả nhất khi tiêm cho trẻ 9–14 tuổi, trước khi phơi nhiễm virus.",
+        en: "The HPV vaccine works best given to children aged 9–14, before exposure to the virus.",
+      } },
+      { type: "heading", text: { vi: "Yếu tố nguy cơ", en: "Risk factors" } },
+      { type: "list", items: {
+        vi: ["Nhiễm HPV nguy cơ cao kéo dài", "Chưa tiêm vaccine HPV", "Hút thuốc lá", "Hệ miễn dịch suy yếu (ví dụ nhiễm HIV)", "Không tầm soát định kỳ"],
+        en: ["Persistent high-risk HPV infection", "Not being vaccinated against HPV", "Smoking", "A weakened immune system (e.g. HIV)", "Not screening regularly"],
+      } },
+      { type: "heading", text: { vi: "Chẩn đoán & tầm soát", en: "Diagnosis & screening" } },
+      { type: "paragraph", text: {
+        vi: "Xét nghiệm HPV và/hoặc Pap phát hiện thay đổi tế bào trước khi thành ung thư; khi bất thường, soi cổ tử cung và sinh thiết sẽ xác định. Phụ nữ 25–65 tuổi nên tầm soát mỗi 3–5 năm tùy xét nghiệm.",
+        en: "HPV and/or Pap tests detect cell changes before they become cancer; if abnormal, colposcopy and biopsy confirm. Women 25–65 should screen every 3–5 years depending on the test.",
+      } },
+      { type: "heading", text: { vi: "Điều trị", en: "Treatment" } },
+      { type: "list", items: {
+        vi: ["Cắt/đốt tổn thương tiền ung thư (thủ thuật nhỏ)", "Phẫu thuật ở giai đoạn sớm", "Xạ trị kết hợp hóa trị ở giai đoạn tiến triển hơn", "Điều trị nhắm đích/miễn dịch cho giai đoạn muộn"],
+        en: ["Removing/ablating pre-cancer lesions (minor procedures)", "Surgery at early stages", "Combined chemo-radiation for more advanced disease", "Targeted/immunotherapy for late stage"],
+      } },
+      { type: "callout", tone: "accent", title: { vi: "Tiêm rồi vẫn tầm soát", en: "Vaccinated? Still screen" }, text: {
+        vi: "Vaccine không phủ hết mọi chủng HPV. Kết hợp tiêm vaccine cho con và tầm soát đều đặn cho bản thân là cách bảo vệ mạnh nhất — và có thể đưa loại ung thư này về gần bằng không.",
+        en: "The vaccine doesn’t cover every HPV strain. Vaccinating your children and screening yourself regularly is the strongest protection — and can drive this cancer close to zero.",
+      } },
+    ],
+    sources: [
+      { vi: "WHO — Chiến lược loại trừ ung thư cổ tử cung (2020)", en: "WHO — Cervical cancer elimination strategy (2020)" },
+      { vi: "American Cancer Society — Cervical Cancer", en: "American Cancer Society — Cervical Cancer" },
+    ],
+  },
 ];
+
+// Maps a homepage cancer-type id to its in-depth article slug.
+export const typeArticleSlug: Record<string, string> = {
+  lung: "ung-thu-phoi",
+  breast: "ung-thu-vu",
+  liver: "ung-thu-gan",
+  colorectal: "ung-thu-dai-truc-trang",
+  stomach: "ung-thu-da-day",
+  cervical: "ung-thu-co-tu-cung",
+};
 
 export function getArticle(slug: string): Article | undefined {
   return articles.find((a) => a.slug === slug);

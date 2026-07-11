@@ -10,7 +10,7 @@ import {
 import { useLang } from "@/lib/i18n";
 import ArticleCard from "./ArticleCard";
 
-const CATEGORY_ORDER: Category[] = ["prevention", "screening", "treatment", "support"];
+const CATEGORY_ORDER: Category[] = ["types", "prevention", "screening", "treatment", "support"];
 
 export default function ArticlesIndex() {
   const { t } = useLang();

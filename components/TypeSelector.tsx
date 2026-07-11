@@ -1,7 +1,9 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { typeSection, types } from "@/lib/content";
+import { typeArticleSlug } from "@/lib/articles";
 import { useLang } from "@/lib/i18n";
 
 const colHeadStyle: React.CSSProperties = {
@@ -137,6 +139,15 @@ export default function TypeSelector() {
             </p>
           </div>
         </div>
+        {typeArticleSlug[active.id] && (
+          <Link
+            href={`/bai-viet/${typeArticleSlug[active.id]}`}
+            className="btn btn-primary"
+            style={{ marginTop: 28, padding: "12px 18px", fontSize: 14 }}
+          >
+            {t({ vi: "Đọc bài chi tiết", en: "Read the full article" })} →
+          </Link>
+        )}
       </div>
     </section>
   );
